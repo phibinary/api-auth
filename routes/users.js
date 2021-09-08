@@ -11,6 +11,8 @@ router.route("/login").post(passport.authenticate("local"), users.login);
 
 router.route("/verify").get(catchAsyncErrors(users.verify));
 
+router.route("/:username/check").get(catchAsyncErrors(users.check));
+
 router.get("/logout", users.logout);
 
 module.exports = router;
